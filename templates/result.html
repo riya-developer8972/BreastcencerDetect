@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: darkblue; }
+        .result-box { border: 2px solid #333; padding: 20px; margin-top: 20px; }
+        a { display: inline-block; margin-top: 20px; padding: 10px; background: darkblue; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <div class="result-box">
+        <h2>{{ result }}</h2>
+        {% if probability %}
+            <p>Probability (Malignant): {{ probability }}</p>
+        {% endif %}
+    </div>
+    <a href="/">🔙 Go Back</a>
+</body>
+</html>
