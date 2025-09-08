@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 500px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            width: 95%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 5px solid #007bff;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Breast Cancer Detection</h2>
+        <form action="/predict" method="post">
+            <label>Mean Radius:</label>
+            <input type="number" step="any" name="mean_radius" required>
+
+            <label>Mean Texture:</label>
+            <input type="number" step="any" name="mean_texture" required>
+
+            <label>Mean Perimeter:</label>
+            <input type="number" step="any" name="mean_perimeter" required>
+
+            <label>Mean Area:</label>
+            <input type="number" step="any" name="mean_area" required>
+
+            <label>Mean Smoothness:</label>
+            <input type="number" step="any" name="mean_smoothness" required>
+
+            <label>Mean Compactness:</label>
+            <input type="number" step="any" name="mean_compactness" required>
+
+            <label>Mean Concavity:</label>
+            <input type="number" step="any" name="mean_concavity" required>
+
+            <label>Mean Concave Points:</label>
+            <input type="number" step="any" name="mean_concave_points" required>
+
+            <label>Mean Symmetry:</label>
+            <input type="number" step="any" name="mean_symmetry" required>
+
+            <label>Mean Fractal Dimension:</label>
+            <input type="number" step="any" name="mean_fractal_dimension" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
